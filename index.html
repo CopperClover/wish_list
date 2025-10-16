@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 16 16%22><text y=%2214%22 font-size=%2216%22>🌿</text></svg>">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>{% block title %}Apartment Wish List{% endblock %}</title>
+
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&family=Comfortaa:wght@500&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --bg-color: #1e1b2e;
+      --accent-color: #a78bfa;
+      --highlight-color: #fca5a5;
+      --green-accent: #86efac;
+      --orange-accent: #fcd34d;
+      --text-color: #f3f4f6;
+      --link-hover: #f9a8d4;
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Nunito', sans-serif;
+      background-color: var(--bg-color);
+      color: var(--text-color);
+      background-image: url("https://www.transparenttextures.com/patterns/leaf.png");
+      background-repeat: repeat;
+      background-size: 150px;
+    }
+
+    header {
+      background-color: rgba(30, 27, 46, 0.9);
+      padding: 1rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-family: 'Comfortaa', cursive;
+      border-bottom: 2px solid var(--green-accent);
+    }
+
+    .navbar {
+      display: flex;
+      gap: 1rem;
+      align-items: center;
+    }
+
+    .dropdown {
+      position: relative;
+    }
+
+    .dropdown button {
+      background: none;
+      border: none;
+      color: var(--accent-color);
+      font-weight: bold;
+      font-family: 'Comfortaa', cursive;
+      cursor: pointer;
+      font-size: 1rem;
+    }
+
+    .dropdown-content {
+      position: absolute;
+      top: 100%;
+      left: 0;
+      background-color: #fff;
+      color: #333;
+      min-width: 180px;
+      border-radius: 8px;
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+      display: none;
+      flex-direction: column;
+      z-index: 1000;
+    }
+
+    .dropdown:hover .dropdown-content,
+    .dropdown:focus-within .dropdown-content {
+      display: flex;
+    }
+
+    .dropdown-content a {
+      padding: 0.75rem 1rem;
+      text-decoration: none;
+      color: #333;
+      font-weight: normal;
+      border-bottom: 1px solid #eee;
+    }
+
+    .dropdown-content a:hover {
+      background-color: var(--green-accent);
+      color: #1e1b2e;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: var(--accent-color);
+      font-weight: bold;
+      transition: color 0.3s ease;
+    }
+
+    nav a:hover {
+      color: var(--link-hover);
+    }
+
+    main {
+      max-width: 800px;
+      margin: auto;
+      padding: 2rem;
+      font-size: 1rem;
+    }
+
+    @media (min-width: 900px) {
+      main {
+        max-width: 1200px;
+      }
+    }
+
+    footer {
+      position: sticky;
+      bottom: 0;
+      width: 100%;
+      text-align: center;
+      background-color: rgba(30, 27, 46, 0.95);
+      padding: 0.75rem;
+      font-size: 0.9rem;
+      font-family: 'Comfortaa', cursive;
+      color: var(--orange-accent);
+      border-top: 1px solid var(--highlight-color);
+    }
+
+    input,
+    select,
+    textarea {
+      width: 100%;
+      padding: 0.5rem;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+      background-color: #2a2a40;
+      color: var(--text-color);
+      font-family: inherit;
+    }
+
+    input:focus,
+    select:focus,
+    textarea:focus {
+      border-color: var(--accent-color);
+      outline: none;
+      box-shadow: 0 0 5px var(--accent-color);
+    }
+
+    textarea {
+      resize: vertical;
+    }
+
+    @media (max-width: 600px) {
+      header, main, footer {
+        padding: 1rem;
+      }
+
+      .navbar {
+        flex-direction: column;
+        align-items: flex-end;
+      }
+
+      .dropdown-content {
+        right: 0;
+        left: auto;
+      }
+    }
+
+    table td, table th {
+      white-space: normal;
+    }
+  </style>
+
+  {% block extra_head %}{% endblock %}
+</head>
+
+<body>
+  <header>
+    <div>🌱✨ <strong>Our Cozy Space</strong></div>
+    <nav class="navbar">
+      <!-- General Dropdown -->
+      <div class="dropdown">
+        <button>General ⌄</button>
+        <div class="dropdown-content">
+          <a href="{% url 'home' %}">🏠 Home</a>
+        </div>
+      </div>
+
+      <!-- Personal Tracker Dropdown -->
+      <div class="dropdown">
+        <button>Personal Tracker ⌄</button>
+        <div class="dropdown-content">
+          <a href="{% url 'tracker_dashboard' %}">📊 Dashboard</a>
+          <a href="{% url 'personal_tracker' %}">➕ New Entry</a>
+          <a href="{% url 'personal_stats' %}">📅 All Entries</a>
+        </div>
+      </div>
+
+      <!-- Plant Tracker Dropdown -->
+      <div class="dropdown">
+        <button>Plant Tracker ⌄</button>
+        <div class="dropdown-content">
+          <a href="{% url 'plant_list' %}">🌿 Dashboard</a>
+          <a href="{% url 'plant_log_list' %}">📊 Care Logs</a>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    {% block content %}{% endblock %}
+  </main>
+
+  <footer>
+    🌸 Made with love and plants 🌿
+  </footer>
+
+  {% block extra_js %}{% endblock %}
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
