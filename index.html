@@ -1,18 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 16 16%22><text y=%2214%22 font-size=%2216%22>🌿</text></svg>">
+  <link rel="icon"
+    href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 16 16%22><text y=%2214%22 font-size=%2216%22>🏠</text></svg>">
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>{% block title %}Apartment Wish List{% endblock %}</title>
+  <title>Apartment Wish List</title>
 
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-  
+
   <!-- Bootstrap CSS -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
 
   <!-- Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&family=Comfortaa:wght@500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&family=Comfortaa:wght@500&display=swap"
+    rel="stylesheet">
 
   <style>
     :root {
@@ -59,22 +62,55 @@
       margin: auto;
       background-color: lightgrey;
     }
+
     th {
-        border: solid 1px ;
-        text-align: center;
-        background-color: rgb(180, 179, 179);
+      border: solid 1px;
+      text-align: center;
+      background-color: rgb(180, 179, 179);
     }
+
     td {
-        border: solid 1px;
+      border: solid 1px;
     }
+
     .priority_1 {
-        background-color: rgb(158, 238, 38);
+      background-color: rgb(158, 238, 38);
     }
+
     .priority_2 {
-        background-color: #467fd4;
+      background-color: #467fd4;
     }
+
     .priority_3 {
-        background-color: salmon;
+      background-color: salmon;
+    }
+
+    .link-card {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 8px;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      max-width: 500px;
+      background: #fafafa;
+      transition: background 0.2s ease;
+    }
+
+    .link-card:hover {
+      background: #f0f0f0;
+    }
+
+    .link-card img {
+      width: 80px;
+      height: 80px;
+      object-fit: cover;
+      border-radius: 6px;
+    }
+
+    .image {
+      text-align: center;
+      vertical-align: middle;
     }
   </style>
 </head>
@@ -86,50 +122,178 @@
 
   <main>
     <p>
-        This is a list of items that we have on our wish list. The priority 1 items are ones we would
-        like to get soonest and would need on a more urgent basis while priority 2 and 3 items are less
-        urgent and we will get to them as we can.
+      This is a list of items that we have on our wish list. The priority 1 items are ones we would
+      like to get soonest and would need on a more urgent basis while priority 2 and 3 items are less
+      urgent and we will get to them as we can.
     </p>
     <table>
-        <thead>
-            <tr>
-                <th>Item</th>
-                <th>Link</th>
-                <th>Priority</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td>Washing Machine</td>
-                <td>
-                    <a href="" target="_blank">link</a>
-                </td>
-                <td class="priority_1">1</td>
-            </tr>
-            <tr>
-                <td>Dishwasher</td>
-                <td>
-                    <a href="https://www.takealot.com/bosch-12-place-dishwasher-series-2-ecosilence-stainless-steel/PLID72200453" target="_blank">link</a>
-                </td>
-                <td class="priority_2">2</td>
-            </tr>
-            <tr>
-                <td>Roomba</td>
-                <td>
-                    <a href="" target="_blank">link</a>
-                </td>
-                <td class="priority_3">3</td>
-            </tr>
-            <tr>
-                <td>Living room carpet</td>
-                <td>
-                    <a href="" target="_blank">link</a>
-                </td>
-                <td class="priority_3">3</td>
-            </tr>
-        </tbody>
+      <thead>
+        <tr>
+          <th>Item</th>
+          <th>Image</th>
+          <th>Priority</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>
+            <a href="https://www.rochester.co.za/seattle-2-piece-daybed-charcoal" target="_blank">Couch</a>
+          </td>
+          <td class="image">
+            <img src="assets/couch.webp" alt="Couch" style="width: 150px; object-fit: conver; border-radius: 8px;">
+          </td>
+          <td class="priority_1">1</td>
+        </tr>
+        <tr>
+          <td>
+            <a href="https://www.takealot.com/hisense-222l-bottom-freezer-fridge-with-water-dispenser-titanium/PLID73749524"
+              target="_blank">Fridge</a>
+          </td>
+          <td class="image">
+            <img src="assets/fridge.jpg" alt="Fridge" style="width: 150px; object-fit: conver; border-radius: 8px;">
+          </td>
+          <td class="priority_1">1</td>
+        </tr>
+        <tr>
+          <td>
+            <a href="https://bash.com/panel-bed-adore-extra-length-153302aacq9/p" target="_blank">Bed Frame</a>
+          </td>
+          <td class="image">
+            <img src="assets/bed_frame.png" alt="Bed Frame"
+              style="width: 150px; object-fit: conver; border-radius: 8px;">
+          </td>
+          <td class="priority_1">1</td>
+        </tr>
+        <tr>
+          <td>
+            <a href="https://www.dialabed.co.za/king-koil-aquila-firm-mattress-only+bed_size-Single~-~Width~91cm+bed_length-Standard~Length~-~Length~188cm"
+              target="_blank">Mattress</a>
+          </td>
+          <td class="image">
+            <img src="assets/mattress.jpg" alt="Mattress" style="width: 150px; object-fit: conver; border-radius: 8px;">
+          </td>
+          <td class="priority_1">1</td>
+        </tr>
+        <tr>
+          <td>
+            <a href="https://www.takealot.com/midea-20l-microwave-inverter-manual-700w-black/PLID95723419"
+              target="_blank">Microwave</a>
+          </td>
+          <td class="image">
+            <img src="assets/microwave.jpg" alt="Microwave"
+              style="width: 150px; object-fit: conver; border-radius: 8px;">
+          </td>
+          <td class="priority_2">2</td>
+        </tr>
+        <tr>
+          <td>
+            <a href="https://www.takealot.com/midea-20l-microwave-inverter-manual-700w-black/PLID95723419"
+              target="_blank">Carpet</a>
+          </td>
+          <td class="image">
+            <img src="assets/carpet.webp" alt="Carpet" style="width: 150px; object-fit: conver; border-radius: 8px;">
+          </td>
+          <td class="priority_2">2</td>
+        </tr>
+        <tr>
+        <tr>
+          <td>
+            <a href="https://www.takealot.com/bosch-12-place-dishwasher-series-2-ecosilence-stainless-steel/PLID72200453"
+              target="_blank">Dishwasher</a>
+          </td>
+          <td class="image">
+            <img src="assets/dishwasher.jpg" alt="Dishwasher"
+              style="width: 150px; object-fit: conver; border-radius: 8px;">
+          </td>
+          <td class="priority_2">2</td>
+        </tr>
+        <tr>
+          <td>
+            <a href="https://www.takealot.com/midea-8kg-front-loader-washing-machine-inverter-1400rpm-titanium/PLID94689527"
+              target="_blank">Washing Machine</a>
+          </td>
+          <td class="image">
+            <img src="assets/washing_machine.jpg" alt="Washing Machine"
+              style="width: 150px; object-fit: conver; border-radius: 8px;">
+          </td>
+          <td class="priority_2">2</td>
+        </tr>
+        <tr>
+          <td>
+            <a href="https://www.takealot.com/midea-8kg-front-loader-washing-machine-inverter-1400rpm-titanium/PLID94689527"
+              target="_blank">Tumble Dryer</a>
+          </td>
+          <td class="image">
+            <img src="assets/tumble_dryer.jpg" alt="Tumble Dryer"
+              style="width: 150px; object-fit: conver; border-radius: 8px;">
+          </td>
+          <td class="priority_2">2</td>
+        </tr>
+        <tr>
+          <td>
+            <a href="https://www.takealot.com/bedside-table-nightstand-end-table-with-fabric-storage-drawer/PLID98115642"
+              target="_blank">Bedside Tables(2x)</a>
+          </td>
+          <td class="image">
+            <img src="assets/side_table.jpg" alt="Side Tables"
+              style="width: 150px; object-fit: conver; border-radius: 8px;">
+          </td>
+          <td class="priority_2">2</td>
+        </tr>
+        <tr>
+          <td>
+            <a href="https://www.takealot.com/bam-budget-coffee-table/PLID93172466?colour_variant=Black"
+              target="_blank">Coffee Table</a>
+          </td>
+          <td class="image">
+            <img src="assets/coffee_table.jpg" alt="Coffee Table"
+              style="width: 150px; object-fit: conver; border-radius: 8px;">
+          </td>
+          <td class="priority_3">3</td>
+        </tr>
+        <tr>
+          <td>
+            <a href="https://www.takealot.com/modern-tv-stand-color-change-led-light-high-gloss-tv-unit-shelve/PLID98506624"
+              target="_blank">TV Stand</a>
+          </td>
+          <td class="image">
+            <img src="assets/tv_stand.jpg" alt="TV Stand" style="width: 150px; object-fit: conver; border-radius: 8px;">
+          </td>
+          <td class="priority_3">3</td>
+        </tr>
+        <tr>
+          <td>
+            <a href="https://www.takealot.com/bosch-serie-4-8kg-condenser-tumble-dryer/PLID68188295"
+              target="_blank">Robot Vaccuum</a>
+          </td>
+          <td class="image">
+            <img src="assets/roomba.jpg" alt="Robot Vaccuum"
+              style="width: 150px; object-fit: conver; border-radius: 8px;">
+          </td>
+          <td class="priority_3">3</td>
+        </tr>
+        <tr>
+          <td>
+            <a href="https://www.takealot.com/hisense-58-a6n-4k-uhd-smart-tv-with-hdr-dolby-vision/PLID95882055"
+              target="_blank">TV</a>
+          </td>
+          <td class="image">
+            <img src="assets/tv.jpg" alt="TV" style="width: 150px; object-fit: conver; border-radius: 8px;">
+          </td>
+          <td class="priority_3">3</td>
+        </tr>
+        <tr>
+          <td>
+            <a href="https://www.takealot.com/2-litre-cordless-electric-glass-kettle-stainless-steel-with-led-/PLID98954598"
+              target="_blank">Kettle</a>
+          </td>
+          <td class="image">
+            <img src="assets/kettle.jpg" alt="Kettle" style="width: 150px; object-fit: conver; border-radius: 8px;">
+          </td>
+          <td class="priority_3">3</td>
+        </tr>
+      </tbody>
     </table>
   </main>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
