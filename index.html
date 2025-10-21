@@ -30,11 +30,18 @@
     body {
       margin: 0;
       font-family: 'Nunito', sans-serif;
-      background-color: var(--bg-color);
       color: var(--text-color);
-      background-image: url("https://www.transparenttextures.com/patterns/leaf.png");
+      background-color: var(--bg-color);
+      background-image:
+        /* vines (top-left) */
+        radial-gradient(circle at 5% 10%, rgba(168, 224, 99, 0.2) 0%, transparent 70%),
+        url('https://www.transparenttextures.com/patterns/paper-fibers.png'),
+        /* subtle pcb tracers (bottom-right) */
+        linear-gradient(135deg, rgba(200, 255, 200, 0.1) 25%, transparent 25%),
+        linear-gradient(315deg, rgba(180, 220, 180, 0.08) 25%, transparent 25%);
+      background-blend-mode: multiply, normal, lighten;
+      background-size: 800px, 300px, 40px 40px, 40px 40px;
       background-repeat: repeat;
-      background-size: 150px;
     }
 
     header {
@@ -43,38 +50,141 @@
       text-align: center;
       background-color: rgb(248, 189, 79);
       padding: 1rem;
-      justify-content: space-between;
       font-family: 'Comfortaa', cursive;
-      border-bottom: 2px solid var(--green-accent);
+      border-bottom: 3px dashed #e0b756;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
     }
 
     main {
-      max-width: 800px;
+      max-width: 900px;
       margin: auto;
       padding: 2rem;
       font-size: 1rem;
+      position: relative;
+    }
+
+    /* decorative vines + circuit overlay */
+    main::before,
+    main::after {
+      content: "";
+      position: absolute;
+      background-repeat: no-repeat;
+      background-size: 300px;
+      opacity: 0.4;
+      pointer-events: none;
+    }
+
+    main::before {
+      top: -40px;
+      left: -60px;
+      width: 320px;
+      height: 320px;
+      background-image: url('data:image/svg+xml;utf8,<svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg"><path d="M20,160 C60,100 100,60 160,40" stroke="%2386b865" stroke-width="3" fill="none" stroke-linecap="round" stroke-opacity="0.6"/><circle cx="40" cy="130" r="3" fill="%2386b865"/><circle cx="100" cy="90" r="2" fill="%23a8e063"/><circle cx="150" cy="50" r="2" fill="%23a8e063"/></svg>');
+    }
+
+    main::after {
+      bottom: -60px;
+      right: -80px;
+      width: 320px;
+      height: 320px;
+      background-image: url('data:image/svg+xml;utf8,<svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg"><path d="M40,40 C100,80 120,120 180,160" stroke="%23a8e063" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-opacity="0.6"/><circle cx="60" cy="60" r="2" fill="%23c8f7c5"/><circle cx="100" cy="100" r="3" fill="%2386b865"/><circle cx="160" cy="140" r="2" fill="%23a8e063"/></svg>');
+    }
+
+    p {
+      text-align: center;
+      font-family: 'Comfortaa', cursive;
+      background: rgba(255, 255, 255, 0.6);
+      border-radius: 12px;
+      padding: 1rem;
+      border: 1px dashed #e0b756;
+      backdrop-filter: blur(2px);
     }
 
     table {
-      white-space: normal;
       width: 100%;
-      border-collapse: collapse;
-      margin: auto;
-      background-color: lightgrey;
+      border-collapse: separate;
+      border-spacing: 0;
+      background-color: #fdfdfd;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
     }
 
-    th {
-      border: solid 1px;
-      text-align: center;
-      background-color: rgb(180, 179, 179);
+    thead th {
+      background-color: rgb(248, 189, 79);
+      font-family: 'Comfortaa', cursive;
+      border-bottom: 3px dashed #d6b46e;
+      padding: 12px;
+      font-size: 1.1rem;
+      color: #333;
+    }
+
+    tbody tr {
+      transition: all 0.2s ease-in-out;
+    }
+
+    tbody tr:nth-child(even) {
+      background-color: #f7f6f2;
+    }
+
+    tbody tr:hover {
+      background-color: #fff4cc;
+      transform: scale(1.01);
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
     }
 
     td {
-      border: solid 1px;
+      padding: 12px;
+      vertical-align: middle;
+      border-bottom: 1px dashed #d6d3d3;
+    }
+
+    td a {
+      color: var(--highlight-color);
+      text-decoration: none;
+      font-weight: 600;
+      transition: color 0.2s;
+    }
+
+    td a:hover {
+      color: var(--link-hover);
+      text-shadow: 0 0 6px rgba(249, 168, 212, 0.5);
+    }
+
+    .image {
+      text-align: center;
+    }
+
+    .image img {
+      width: 130px;
+      height: auto;
+      border-radius: 10px;
+      border: 3px solid #fff;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .image img:hover {
+      transform: rotate(-1deg) scale(1.05);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    }
+
+    .priority_1,
+    .priority_2,
+    .priority_3 {
+      text-align: center;
+      font-weight: bold;
+      color: white;
+      border-radius: 20px;
+      padding: 6px 12px;
+      width: 40px;
+      margin: auto;
+      font-family: 'Comfortaa', cursive;
     }
 
     .priority_1 {
       background-color: rgb(158, 238, 38);
+      color: black;
     }
 
     .priority_2 {
@@ -83,34 +193,6 @@
 
     .priority_3 {
       background-color: salmon;
-    }
-
-    .link-card {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      padding: 8px;
-      border: 1px solid #ddd;
-      border-radius: 8px;
-      max-width: 500px;
-      background: #fafafa;
-      transition: background 0.2s ease;
-    }
-
-    .link-card:hover {
-      background: #f0f0f0;
-    }
-
-    .link-card img {
-      width: 80px;
-      height: 80px;
-      object-fit: cover;
-      border-radius: 6px;
-    }
-
-    .image {
-      text-align: center;
-      vertical-align: middle;
     }
   </style>
 </head>
@@ -195,7 +277,6 @@
           </td>
           <td class="priority_2">2</td>
         </tr>
-        <tr>
         <tr>
           <td>
             <a href="https://www.takealot.com/bosch-12-place-dishwasher-series-2-ecosilence-stainless-steel/PLID72200453"
@@ -296,4 +377,5 @@
     </table>
   </main>
 </body>
+
 </html>
