@@ -1,0 +1,92 @@
+[
+  {
+    "name": "Couch",
+    "url": "https://www.rochester.co.za/seattle-2-piece-daybed-charcoal",
+    "image": "assets/couch.webp",
+    "priority": 1
+  },
+  {
+    "name": "Fridge",
+    "url": "https://www.takealot.com/hisense-222l-bottom-freezer-fridge-with-water-dispenser-titanium/PLID73749524",
+    "image": "assets/fridge.jpg",
+    "priority": 1
+  },
+  {
+    "name": "Washing Machine",
+    "url": "https://www.takealot.com/midea-8kg-front-loader-washing-machine-inverter-1400rpm-titanium/PLID94689527",
+    "image": "assets/washing_machine.jpg",
+    "priority": 1
+  },
+  {
+    "name": "Microwave",
+    "url": "https://www.takealot.com/midea-20l-microwave-inverter-manual-700w-black/PLID95723419",
+    "image": "assets/microwave.jpg",
+    "priority": 2
+  },
+  {
+    "name": "Carpet",
+    "url": "https://share.temu.com/Rj51iIJ4XXB",
+    "image": "assets/carpet.webp",
+    "priority": 2
+  },
+  {
+    "name": "Dishwasher",
+    "url": "https://www.takealot.com/bosch-12-place-dishwasher-series-2-ecosilence-stainless-steel/PLID72200453",
+    "image": "assets/dishwasher.jpg",
+    "priority": 2
+  },
+  {
+    "name": "Tumble Dryer",
+    "url": "https://www.takealot.com/midea-8kg-front-loader-washing-machine-inverter-1400rpm-titanium/PLID94689527",
+    "image": "assets/tumble_dryer.jpg",
+    "priority": 2
+  },
+  {
+    "name": "Bedside Tables (2x)",
+    "url": "https://www.takealot.com/bedside-table-nightstand-end-table-with-fabric-storage-drawer/PLID98115642",
+    "image": "assets/side_table.jpg",
+    "priority": 2
+  },
+  {
+    "name": "Coffee Table",
+    "url": "https://www.takealot.com/bam-budget-coffee-table/PLID93172466?colour_variant=Black",
+    "image": "assets/coffee_table.jpg",
+    "priority": 3
+  },
+  {
+    "name": "TV Stand",
+    "url": "https://www.takealot.com/modern-tv-stand-color-change-led-light-high-gloss-tv-unit-shelve/PLID98506624",
+    "image": "assets/tv_stand.jpg",
+    "priority": 3
+  },
+  {
+    "name": "Robot Vacuum",
+    "url": "https://www.takealot.com/bosch-serie-4-8kg-condenser-tumble-dryer/PLID68188295",
+    "image": "assets/roomba.jpg",
+    "priority": 3
+  },
+  {
+    "name": "TV",
+    "url": "https://www.takealot.com/hisense-58-a6n-4k-uhd-smart-tv-with-hdr-dolby-vision/PLID95882055",
+    "image": "assets/tv.jpg",
+    "priority": 3
+  },
+  {
+    "name": "Kettle",
+    "url": "https://www.takealot.com/2-litre-cordless-electric-glass-kettle-stainless-steel-with-led-/PLID98954598",
+    "image": "assets/kettle.jpg",
+    "priority": 3
+  },
+  {
+    "name": "Bed Frame",
+    "url": "https://bash.com/panel-bed-adore-extra-length-153302aacq9/p",
+    "image": "assets/bed_frame.png",
+    "priority": 3
+  },
+  {
+    "name": "Mattress",
+    "url": "https://www.dialabed.co.za/king-koil-aquila-firm-mattress-only+bed_size-Single~-~Width~91cm+bed_length-Standard~Length~-~Length~188cm",
+    "image": "assets/mattress.jpg",
+    "priority": 3
+  }
+]
